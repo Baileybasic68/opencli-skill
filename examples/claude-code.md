@@ -7,7 +7,7 @@ This document shows how to install and use the OpenCLI skill in Claude Code.
 Clone this repository into Claude Code's skills directory:
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
 ```
 
 If the folder already exists, update it:

@@ -2,6 +2,8 @@
 
 [English](./README.md) | 中文
 
+![OpenCLI Skill Banner](./assets/banner.svg)
+
 一个面向多种 AI agent 环境的 OpenCLI skill，帮助 agent 用更稳定、可发现、只读优先的方式调用 OpenCLI。
 
 仓库地址：[GloriaGuo/opencli-skill](https://github.com/GloriaGuo/opencli-skill)
@@ -49,19 +51,64 @@ OpenCLI 本身覆盖了很多能力：
 - [examples/openclaw.md](./examples/openclaw.md)：OpenClaw 用法
 - [examples/openclaw-prompts.md](./examples/openclaw-prompts.md)：OpenClaw prompt 模板
 - [examples/openclaw.json5.example](./examples/openclaw.json5.example)：OpenClaw 配置示例
+- [assets/banner.svg](./assets/banner.svg)：仓库 banner 和可上传的社交预览图素材
+- [install.sh](./install.sh)：Unix-like 环境一键安装脚本
+- [install.ps1](./install.ps1)：PowerShell 一键安装脚本
 
 ## 安装
+
+### 一键安装
+
+Unix-like shell：
+
+```bash
+./install.sh codex
+./install.sh claude
+./install.sh openclaw
+./install.sh openclaw-workspace
+```
+
+如果不想先 clone，也可以直接远程执行：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.sh | bash -s -- codex
+curl -fsSL https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.sh | bash -s -- claude
+curl -fsSL https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.sh | bash -s -- openclaw
+```
+
+PowerShell：
+
+```powershell
+./install.ps1 codex
+./install.ps1 claude
+./install.ps1 openclaw
+./install.ps1 openclaw-workspace
+```
+
+如果不想先 clone，也可以直接远程执行：
+
+```powershell
+irm https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.ps1 | iex
+```
+
+### 仓库 Banner / 社交预览图
+
+仓库已经自带一个可直接使用的素材：[assets/banner.svg](./assets/banner.svg)。
+
+- 它已经显示在 README 顶部
+- 你也可以手动上传到 GitHub 仓库设置中的 social preview image
+- 如果你后面想要 PNG，可以把这个 SVG 导出为 1280×640 或 2560×1280
 
 ### Codex
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
+git clone https://github.com/GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
 ```
 
 ### Claude Code
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
 ```
 
 ### OpenClaw
@@ -69,13 +116,13 @@ git clone git@github.com:GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
 共享安装：
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
 ```
 
 workspace 安装：
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ./skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ./skills/opencli
 ```
 
 ## 推荐的 OpenCLI 环境准备

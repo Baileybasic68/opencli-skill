@@ -2,6 +2,8 @@
 
 English | [中文](./README.zh-CN.md)
 
+![OpenCLI Skill Banner](./assets/banner.svg)
+
 An agent skill for working with [OpenCLI](https://github.com/jackwener/opencli): command discovery, browser-login reuse, desktop-app adapters, downloads, troubleshooting, and adapter-generation workflows.
 
 Repository: [GloriaGuo/opencli-skill](https://github.com/GloriaGuo/opencli-skill)
@@ -48,16 +50,61 @@ This skill gives AI coding agents a read-first, agent-safe operating path so the
 - [examples/openclaw.md](./examples/openclaw.md): OpenClaw installation and usage examples
 - [examples/openclaw-prompts.md](./examples/openclaw-prompts.md): OpenClaw-ready prompt templates for multi-channel agents
 - [examples/openclaw.json5.example](./examples/openclaw.json5.example): fuller OpenClaw skill-loading config example
+- [assets/banner.svg](./assets/banner.svg): repository banner and ready-to-upload social preview asset
+- [install.sh](./install.sh): one-click install script for Unix-like shells
+- [install.ps1](./install.ps1): one-click install script for PowerShell
 - [scripts/validate_skill.py](./scripts/validate_skill.py): portable validation script for CI and local checks
 
 ## Install
+
+### One-Click Install
+
+Unix-like shells:
+
+```bash
+./install.sh codex
+./install.sh claude
+./install.sh openclaw
+./install.sh openclaw-workspace
+```
+
+Remote install without cloning first:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.sh | bash -s -- codex
+curl -fsSL https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.sh | bash -s -- claude
+curl -fsSL https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.sh | bash -s -- openclaw
+```
+
+PowerShell:
+
+```powershell
+./install.ps1 codex
+./install.ps1 claude
+./install.ps1 openclaw
+./install.ps1 openclaw-workspace
+```
+
+Remote install without cloning first:
+
+```powershell
+irm https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.ps1 | iex
+```
+
+### Repository Banner / Social Preview
+
+The repository includes a ready-made banner asset at [assets/banner.svg](./assets/banner.svg).
+
+- it is already embedded at the top of this README
+- it can also be uploaded manually in GitHub repository settings as a social preview image
+- if you want a PNG version later, export the SVG at 1280×640 or 2560×1280
 
 ### Codex
 
 Clone or copy the repo into your Codex skills directory:
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
+git clone https://github.com/GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
 ```
 
 Or copy the folder contents manually into:
@@ -81,7 +128,7 @@ Use $opencli to troubleshoot why my Zhihu command returns empty data.
 Codex-oriented installation path:
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
+git clone https://github.com/GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
 ```
 
 ## Use In Claude Code
@@ -89,7 +136,7 @@ git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex
 Claude Code skills typically live under `~/.claude/skills`. Copy or clone this repository there:
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
 ```
 
 Then ask Claude Code in natural language or reference the skill explicitly:
@@ -111,13 +158,13 @@ OpenClaw can load shared skills from `~/.openclaw/skills` or workspace-specific 
 Shared install for all agents:
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
 ```
 
 Workspace-specific install:
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ./skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ./skills/opencli
 ```
 
 Config file: `~/.openclaw/openclaw.json`
@@ -275,7 +322,7 @@ python3 scripts/validate_skill.py
 ### Codex
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
+git clone https://github.com/GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
 ```
 
 或者手动复制到：
@@ -299,7 +346,7 @@ Use $opencli to troubleshoot why my Zhihu command returns empty data.
 Codex 默认安装路径：
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
+git clone https://github.com/GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
 ```
 
 ## 在 Claude Code 里怎么用
@@ -307,7 +354,7 @@ git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex
 Claude Code 的 skill 通常放在 `~/.claude/skills` 下，可以这样安装：
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
 ```
 
 然后直接用自然语言，或者显式提到 `$opencli`：
@@ -329,13 +376,13 @@ OpenClaw 可以从 `~/.openclaw/skills` 读取共享 skill，也可以从当前 
 给所有 agent 共用的安装方式：
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
 ```
 
 只给当前 workspace 使用：
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ./skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ./skills/opencli
 ```
 
 配置文件位置：`~/.openclaw/openclaw.json`

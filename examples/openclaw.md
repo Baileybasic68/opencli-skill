@@ -12,13 +12,13 @@ OpenClaw supports multiple skill locations:
 Shared install:
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
 ```
 
 Workspace install:
 
 ```bash
-git clone git@github.com:GloriaGuo/opencli-skill.git ./skills/opencli
+git clone https://github.com/GloriaGuo/opencli-skill.git ./skills/opencli
 ```
 
 ## Config File
