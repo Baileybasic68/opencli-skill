@@ -44,6 +44,8 @@ This skill gives Codex a read-first, agent-safe operating path so it can:
 - [references/practical-scenarios.md](./references/practical-scenarios.md): detailed scenario manual
 - [references/troubleshooting.md](./references/troubleshooting.md): common failures and fixes
 - [examples/README.md](./examples/README.md): example prompts and command recipes
+- [examples/claude-code.md](./examples/claude-code.md): Claude Code installation and prompt examples
+- [scripts/validate_skill.py](./scripts/validate_skill.py): portable validation script for CI and local checks
 
 ## Install
 
@@ -58,6 +60,44 @@ Or copy the folder contents manually into:
 ```bash
 ${CODEX_HOME:-$HOME/.codex}/skills/opencli
 ```
+
+## Use In Codex
+
+Once installed, ask Codex naturally or invoke the skill explicitly:
+
+```text
+Use $opencli to inspect the installed OpenCLI surface and fetch the Bilibili hot list.
+```
+
+```text
+Use $opencli to troubleshoot why my Zhihu command returns empty data.
+```
+
+Codex-oriented installation path:
+
+```bash
+git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
+```
+
+## Use In Claude Code
+
+Claude Code skills typically live under `~/.claude/skills`. Copy or clone this repository there:
+
+```bash
+git clone git@github.com:GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
+```
+
+Then ask Claude Code in natural language or reference the skill explicitly:
+
+```text
+Use $opencli to run a safe read-first OpenCLI workflow for this task.
+```
+
+```text
+Use $opencli to inspect the local OpenCLI setup and tell me whether the Codex and Cursor adapters are available.
+```
+
+Claude Code usage examples are collected in [examples/claude-code.md](./examples/claude-code.md).
 
 ## Recommended OpenCLI Setup
 
@@ -115,7 +155,7 @@ opencli bilibili download BV1xxx --output ./bilibili
 ## Validation
 
 ```bash
-python3 /Users/ruiguo/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
+python3 scripts/validate_skill.py
 ```
 
 ## 中文说明
@@ -145,6 +185,8 @@ python3 /Users/ruiguo/.codex/skills/.system/skill-creator/scripts/quick_validate
 - [references/practical-scenarios.md](./references/practical-scenarios.md)：详细实用场景手册
 - [references/troubleshooting.md](./references/troubleshooting.md)：常见故障排查
 - [examples/README.md](./examples/README.md)：可直接照抄的 prompt 和命令示例
+- [examples/claude-code.md](./examples/claude-code.md)：Claude Code 安装与调用示例
+- [scripts/validate_skill.py](./scripts/validate_skill.py)：本地与 CI 通用的校验脚本
 
 ## 安装方式
 
@@ -157,6 +199,44 @@ git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex
 ```bash
 ${CODEX_HOME:-$HOME/.codex}/skills/opencli
 ```
+
+## 在 Codex 里怎么用
+
+安装后，可以自然描述任务，也可以显式提到 `$opencli`：
+
+```text
+Use $opencli to inspect the installed OpenCLI surface and fetch the Bilibili hot list.
+```
+
+```text
+Use $opencli to troubleshoot why my Zhihu command returns empty data.
+```
+
+Codex 默认安装路径：
+
+```bash
+git clone git@github.com:GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
+```
+
+## 在 Claude Code 里怎么用
+
+Claude Code 的 skill 通常放在 `~/.claude/skills` 下，可以这样安装：
+
+```bash
+git clone git@github.com:GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
+```
+
+然后直接用自然语言，或者显式提到 `$opencli`：
+
+```text
+Use $opencli to run a safe read-first OpenCLI workflow for this task.
+```
+
+```text
+Use $opencli to inspect the local OpenCLI setup and tell me whether the Codex and Cursor adapters are available.
+```
+
+更完整的 Claude Code 示例见 [examples/claude-code.md](./examples/claude-code.md)。
 
 ## 推荐的 OpenCLI 环境准备
 
@@ -210,3 +290,9 @@ opencli bilibili download BV1xxx --output ./bilibili
 - 以本机安装版本的命令面为准，不盲信旧文档
 - agent 消费优先 `json`，人工查看优先 `yaml`
 - 浏览器登录态是第一优先级依赖
+
+## 校验
+
+```bash
+python3 scripts/validate_skill.py
+```
