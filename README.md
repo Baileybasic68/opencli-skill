@@ -46,6 +46,8 @@ This skill gives AI coding agents a read-first, agent-safe operating path so the
 - [examples/README.md](./examples/README.md): example prompts and command recipes
 - [examples/claude-code.md](./examples/claude-code.md): Claude Code installation and prompt examples
 - [examples/openclaw.md](./examples/openclaw.md): OpenClaw installation and usage examples
+- [examples/openclaw-prompts.md](./examples/openclaw-prompts.md): OpenClaw-ready prompt templates for multi-channel agents
+- [examples/openclaw.json5.example](./examples/openclaw.json5.example): fuller OpenClaw skill-loading config example
 - [scripts/validate_skill.py](./scripts/validate_skill.py): portable validation script for CI and local checks
 
 ## Install
@@ -173,6 +175,8 @@ Use $opencli to diagnose why my browser-backed OpenCLI command is returning empt
 ```
 
 OpenClaw-specific notes and examples are collected in [examples/openclaw.md](./examples/openclaw.md).
+For a fuller config example, see [examples/openclaw.json5.example](./examples/openclaw.json5.example).
+For ready-to-send prompts, see [examples/openclaw-prompts.md](./examples/openclaw-prompts.md).
 
 ## Recommended OpenCLI Setup
 
@@ -262,6 +266,8 @@ python3 scripts/validate_skill.py
 - [examples/README.md](./examples/README.md)：可直接照抄的 prompt 和命令示例
 - [examples/claude-code.md](./examples/claude-code.md)：Claude Code 安装与调用示例
 - [examples/openclaw.md](./examples/openclaw.md)：OpenClaw 安装与调用示例
+- [examples/openclaw-prompts.md](./examples/openclaw-prompts.md)：面向多渠道 agent 的 OpenClaw prompt 模板
+- [examples/openclaw.json5.example](./examples/openclaw.json5.example)：更完整的 OpenClaw 配置示例
 - [scripts/validate_skill.py](./scripts/validate_skill.py)：本地与 CI 通用的校验脚本
 
 ## 安装方式
@@ -387,6 +393,8 @@ Use $opencli to diagnose why my browser-backed OpenCLI command is returning empt
 ```
 
 更完整的 OpenClaw 示例见 [examples/openclaw.md](./examples/openclaw.md)。
+更完整的配置示例见 [examples/openclaw.json5.example](./examples/openclaw.json5.example)。
+多渠道 agent prompt 模板见 [examples/openclaw-prompts.md](./examples/openclaw-prompts.md)。
 
 ## 推荐的 OpenCLI 环境准备
 

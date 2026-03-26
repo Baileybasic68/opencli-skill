@@ -6,3 +6,5 @@ This folder contains practical prompts and command recipes you can copy into Cod
 - [claude-code.md](./claude-code.md): Claude Code installation and invocation examples
 - [command-recipes.md](./command-recipes.md): reusable command recipes grouped by workflow
 - [openclaw.md](./openclaw.md): OpenClaw installation and invocation examples
+- [openclaw-prompts.md](./openclaw-prompts.md): multi-channel OpenClaw prompt templates
+- [openclaw.json5.example](./openclaw.json5.example): fuller OpenClaw config example

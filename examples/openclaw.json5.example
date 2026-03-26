@@ -1,0 +1,22 @@
+{
+  skills: {
+    load: {
+      watch: true,
+      watchDebounceMs: 250,
+      extraDirs: [
+        "/Users/you/skill-packs",
+      ],
+    },
+    entries: {
+      opencli: {
+        enabled: true,
+      },
+    },
+  },
+
+  agents: {
+    defaults: {
+      workspace: "~/.openclaw/workspace",
+    },
+  },
+}
