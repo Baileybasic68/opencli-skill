@@ -50,7 +50,8 @@ This skill gives AI coding agents a read-first, agent-safe operating path so the
 - [examples/openclaw.md](./examples/openclaw.md): OpenClaw installation and usage examples
 - [examples/openclaw-prompts.md](./examples/openclaw-prompts.md): OpenClaw-ready prompt templates for multi-channel agents
 - [examples/openclaw.json5.example](./examples/openclaw.json5.example): fuller OpenClaw skill-loading config example
-- [assets/banner.svg](./assets/banner.svg): repository banner and ready-to-upload social preview asset
+- [assets/banner.svg](./assets/banner.svg): repository banner source asset
+- [assets/social-preview.png](./assets/social-preview.png): ready-to-upload GitHub social preview image
 - [install.sh](./install.sh): one-click install script for Unix-like shells
 - [install.ps1](./install.ps1): one-click install script for PowerShell
 - [scripts/validate_skill.py](./scripts/validate_skill.py): portable validation script for CI and local checks
@@ -93,11 +94,20 @@ irm https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.ps1 |
 
 ### Repository Banner / Social Preview
 
-The repository includes a ready-made banner asset at [assets/banner.svg](./assets/banner.svg).
+The repository includes both a source banner and a pre-exported social preview image:
 
-- it is already embedded at the top of this README
-- it can also be uploaded manually in GitHub repository settings as a social preview image
-- if you want a PNG version later, export the SVG at 1280×640 or 2560×1280
+- [assets/banner.svg](./assets/banner.svg)
+- [assets/social-preview.png](./assets/social-preview.png)
+
+GitHub upload path:
+
+1. Open the repository on GitHub.
+2. Go to `Settings`.
+3. Under `General`, scroll to `Social preview`.
+4. Click `Upload an image`.
+5. Select [assets/social-preview.png](./assets/social-preview.png).
+
+The SVG is already embedded at the top of this README. If you want a wider preview later, re-export the SVG at 1280×640 or 2560×1280.
 
 ### Codex
 

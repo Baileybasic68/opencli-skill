@@ -51,7 +51,8 @@ OpenCLI 本身覆盖了很多能力：
 - [examples/openclaw.md](./examples/openclaw.md)：OpenClaw 用法
 - [examples/openclaw-prompts.md](./examples/openclaw-prompts.md)：OpenClaw prompt 模板
 - [examples/openclaw.json5.example](./examples/openclaw.json5.example)：OpenClaw 配置示例
-- [assets/banner.svg](./assets/banner.svg)：仓库 banner 和可上传的社交预览图素材
+- [assets/banner.svg](./assets/banner.svg)：仓库 banner 源文件
+- [assets/social-preview.png](./assets/social-preview.png)：可直接上传到 GitHub 的社交预览图
 - [install.sh](./install.sh)：Unix-like 环境一键安装脚本
 - [install.ps1](./install.ps1)：PowerShell 一键安装脚本
 
@@ -93,11 +94,20 @@ irm https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.ps1 |
 
 ### 仓库 Banner / 社交预览图
 
-仓库已经自带一个可直接使用的素材：[assets/banner.svg](./assets/banner.svg)。
+仓库里已经自带两份可直接使用的素材：
 
-- 它已经显示在 README 顶部
-- 你也可以手动上传到 GitHub 仓库设置中的 social preview image
-- 如果你后面想要 PNG，可以把这个 SVG 导出为 1280×640 或 2560×1280
+- [assets/banner.svg](./assets/banner.svg)
+- [assets/social-preview.png](./assets/social-preview.png)
+
+上传到 GitHub 的路径是：
+
+1. 打开仓库页面
+2. 进入 `Settings`
+3. 在 `General` 里找到 `Social preview`
+4. 点击 `Upload an image`
+5. 选择 [assets/social-preview.png](./assets/social-preview.png)
+
+其中 SVG 已经显示在 README 顶部。如果你后面想换成更宽的预览图，可以把 SVG 重新导出为 1280×640 或 2560×1280。
 
 ### Codex
 
